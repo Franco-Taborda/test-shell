@@ -1,12 +1,12 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { loadRemoteEntry } from '@angular-architects/module-federation';
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+// Falling back to loading scripts
+// loadRemoteEntry({ type: 'script', remoteEntry: 'http://localhost:3000/remoteEntry.js', remoteName: 'mfe1'})
 
-if (environment.production) {
-  enableProdMode();
-}
+// Legacy version
+// loadRemoteEntry('http://localhost:3000/remoteEntry.js', 'mfe1')
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+// New version for loading modules
+loadRemoteEntry({ type: 'module', remoteEntry: 'http://localhost:4400/remoteEntry.js' }).then((_) =>
+  import('./bootstrap').catch((err) => console.error(err)),
+);

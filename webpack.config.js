@@ -28,7 +28,7 @@ module.exports = {
     new ModuleFederationPlugin({
       library: { type: "module" },
       remotes: {
-        FirstMicroFront: "http://localhost:4400/remoteEntry.js",
+        // FirstMicroFront: "http://localhost:4400/remoteEntry.js",
       },
 
       shared: share({

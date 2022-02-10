@@ -1,0 +1,21 @@
+.container {
+  margin-top: 5vh;
+  box-sizing: border-box;
+
+  &--center {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1vh;
+    justify-items: center;
+    align-items: center;
+  }
+}
+
+.link {
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+  margin-bottom: 1vh;
+  font-size: 1.5em;
+}

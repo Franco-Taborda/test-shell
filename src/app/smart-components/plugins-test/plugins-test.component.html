@@ -1,0 +1,10 @@
+<h1 class="title">Plugins Test</h1>
+
+<div class="container container--center">
+  <ng-container *ngFor="let plugin of availablePlugins">
+    <a class="link" (click)="togglePlugin(plugin)">{{ plugin.displayName }}</a>
+  </ng-container>
+  <ng-container *ngFor="let plugin of selectedPlugins">
+    <app-plugin-proxy [pluginOptions]="plugin"></app-plugin-proxy>
+  </ng-container>
+</div>

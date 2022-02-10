@@ -1,6 +1,6 @@
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { Routes } from '@angular/router';
-import { Microfrontend } from './app/microfrontends/microfrontend';
+import { Microfrontend } from './app/microfrontends/models/microfrontend';
 import { APP_ROUTES } from './app/app.routes';
 
 export function buildRoutes(options: Microfrontend[]): Routes {
